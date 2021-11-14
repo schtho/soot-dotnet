@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.18.1" />
+        <PackageReference Include="ICSharpCode.Decompiler" Version="6.2.1.6137" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.0" />
+        <PackageReference Include="NLog" Version="4.6.5" />
+        <PackageReference Include="NLog.Extensions.Logging" Version="1.5.1" />
+    </ItemGroup>
+    
+    
+    <ItemGroup>
+        <MySourceFiles Include="$(SolutionDir)Soot.Dotnet.Decompiler/bin/Debug/netcoreapp3.1/*.*" />
+    </ItemGroup>
+    <Target Name="CopyContent" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">
+        <MakeDir Directories="$(SolutionDir)Soot.Dotnet.NativeHost/bin/Debug/" />
+        <Copy SourceFiles="@(MySourceFiles)" DestinationFolder="$(SolutionDir)Soot.Dotnet.NativeHost/bin/Debug/" ContinueOnError="true" />
+    </Target>
+    
+</Project>
