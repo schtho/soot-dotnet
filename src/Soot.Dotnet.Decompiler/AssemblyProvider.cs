@@ -25,7 +25,7 @@ namespace Soot.Dotnet.Decompiler
 
         public delegate CliByteArray GetAllTypesMsgDelegate(CliByteArray arg);
 
-        public delegate CliByteArray GetMethodBodyMsgDelegate(CliString arg, CliString arg2, CliString arg3);
+        public delegate CliByteArray GetMethodBodyMsgDelegate(CliByteArray arg);
 
         public delegate CliByteArray GetMethodBodyOfPropertyMsgDelegate(CliByteArray arg);
 
