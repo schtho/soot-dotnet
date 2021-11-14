@@ -63,6 +63,7 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
                     IsOptional = parameter.IsOptional
                 };
                 m.Parameter.Add(p);
+                // TODO IsUnsafe is not working fine, ILSpy has an AST transformation for this, but we need the method body for this - System.String:InternalCopy has no pointertype but is unsafe
                 if (parameter.Type is PointerType)
                     m.IsUnsafe = true;
             }
@@ -76,7 +77,8 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
                 m.Attributes.Add(ToAttributeDefinition(attribute));
                 var attrString = attribute.AttributeType.ReflectionName;
                 if (attrString.Contains("System.Runtime.InteropServices.DllImportAttribute") ||
-                    attrString.Contains("System.Runtime.CompilerServices")) 
+                    (attrString.Contains("System.Runtime.CompilerServices") && 
+                     !attrString.Contains("System.Runtime.CompilerServices.CompilerGeneratedAttribute"))) 
                     m.IsExtern = true;
             }
 

@@ -51,6 +51,11 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
             return msg;
         }
 
+        /// <summary>
+        /// Usage in Try/Catch/Finally Instructions to remove leave block x instruction, because these BlockContainer
+        /// are part of the main BlockContainer
+        /// </summary>
+        /// <param name="container"></param>
         private static void CleanUpBlockContainer(ref BlockContainer container)
         {
             if (container?.Blocks == null || container.Blocks.Count == 0)

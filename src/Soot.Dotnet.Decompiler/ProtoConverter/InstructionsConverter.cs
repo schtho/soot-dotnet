@@ -237,7 +237,9 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
                                 || label.Start.Equals(long.MinValue)) // check if min in range
                                 defaultTargetInstr = targetInstruction;
                             else
-                                sectionsDict.Add(label.Start, targetInstruction);
+                                for (long l = label.Start; l < label.End; l++)
+                                    sectionsDict.Add(l, targetInstruction);
+
                     }
 
                     // FILL Proto MSG
