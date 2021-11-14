@@ -7,3 +7,6 @@ Please edit CMakeLists.txt file with the actual path to .NET.
 The idea is based on:
 - https://docs.microsoft.com/en-us/dotnet/core/tutorials/netcore-hosting
 - https://github.com/dotnet/samples/tree/main/core/hosting
+
+## To Do
+To do's are marked in the project with `// TODO`. Search for this string in this project. 

@@ -21,6 +21,8 @@ Settings::Settings() {
     theSettings[MethodMethodBodyPropertyDelegateName] = "GetMethodBodyOfPropertyMsgDelegate";
     theSettings[MethodMethodBodyEventName] = "GetMethodBodyOfEventMsg";
     theSettings[MethodMethodBodyEventDelegateName] = "GetMethodBodyOfEventMsgDelegate";
+    theSettings[MethodAssemblyContentName] = "GetAssemblyContent";
+    theSettings[MethodAssemblyContentDelegateName] = "GetAssemblyContentDelegate";
 }
 
 string &Settings::operator[](const Settings::SettingName &theName) {

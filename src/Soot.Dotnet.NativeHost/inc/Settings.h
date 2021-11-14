@@ -27,7 +27,9 @@ public:
         MethodMethodBodyPropertyName,
         MethodMethodBodyPropertyDelegateName,
         MethodMethodBodyEventName,
-        MethodMethodBodyEventDelegateName
+        MethodMethodBodyEventDelegateName,
+        MethodAssemblyContentName,
+        MethodAssemblyContentDelegateName
     } SettingName;
 
 private:

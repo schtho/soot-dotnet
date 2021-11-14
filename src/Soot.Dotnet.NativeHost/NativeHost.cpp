@@ -24,7 +24,7 @@ void NativeHost::init() {
     assert(size != 0);
 #else
     auto resolved = realpath(settings[Settings::SettingName::PathToAssembly].c_str(), host_path);
-    assert(resolved != nullptr);
+    assert(resolved != nullptr && "Failure: The path to the NativeHost library is wrong!");
 #endif
 
     root_path = host_path;
@@ -234,10 +234,10 @@ cli_byte_array NativeHost::AssemblyProvider_GetAssemblyContent(cli_byte_array &p
     int rc = load_assembly_and_get_function_pointer(
             dotnetlib_path.c_str(),
             dotnet_type,
-            STR("GetAssemblyContent") /*method_name*/,
+            STR(settings[Settings::SettingName::MethodAssemblyContentName].c_str()) /*method_name*/,
             STR((settings[Settings::SettingName::MethodFullyQualifiedClassName] + "+" +
-                 "GetAssemblyContentDelegate" + ", " +
-                 settings[Settings::SettingName::MethodNamespace]).c_str()
+                settings[Settings::SettingName::MethodAssemblyContentDelegateName] + ", " +
+                settings[Settings::SettingName::MethodNamespace]).c_str()
             ) /*delegate_type_name*/,
             nullptr,
             (void**)&csharp_method);
