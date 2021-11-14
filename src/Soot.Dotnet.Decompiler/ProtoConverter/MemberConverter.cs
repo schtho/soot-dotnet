@@ -76,9 +76,14 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
             {
                 m.Attributes.Add(ToAttributeDefinition(attribute));
                 var attrString = attribute.AttributeType.ReflectionName;
+                
+                // rewrite IsExtern Field, because is not present in ILSpy
+                if (m.IsAbstract) continue;
                 if (attrString.Contains("System.Runtime.InteropServices.DllImportAttribute") ||
-                    (attrString.Contains("System.Runtime.CompilerServices") && 
-                     !attrString.Contains("System.Runtime.CompilerServices.CompilerGeneratedAttribute"))) 
+                    attrString.Contains("System.Runtime.CompilerServices") && 
+                    !attrString.Contains("System.Runtime.CompilerServices.CompilerGeneratedAttribute") && 
+                    !attrString.Contains("System.Runtime.CompilerServices.NullableAttribute") && 
+                    !attrString.Contains("System.Runtime.CompilerServices.NullableContextAttribute")) 
                     m.IsExtern = true;
             }
 
