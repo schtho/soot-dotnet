@@ -328,6 +328,18 @@ namespace Soot.Dotnet.Decompiler.Parser
                         case "System.UInt32":
                             numCilPrimTypes++;
                             break;
+                        case "System.IntPtr":
+                            numCilPrimTypes++;
+                            break;
+                        case "System.UIntPtr":
+                            numCilPrimTypes++;
+                            break;
+                        case "nint":
+                            numCilPrimTypes++;
+                            break;
+                        case "nuint":
+                            numCilPrimTypes++;
+                            break;
                         default:
                             return false;
                     }

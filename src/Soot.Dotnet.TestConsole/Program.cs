@@ -22,8 +22,8 @@ namespace Soot.Dotnet.TestConsole
             // TestTypeDefinition();
             // TestGetMethodBody2();
             
-            // TestTypeDefinition2();
-            TestGetMethodBody4();
+            TestTypeDefinition3();
+            // TestGetMethodBody5();
 
         }
 
@@ -86,7 +86,7 @@ namespace Soot.Dotnet.TestConsole
 
             int x = 0;
         }
-
+        
         static void TestTypeDefinition2()
         {
             AnalyzerParamsMsg protoParams = new AnalyzerParamsMsg
@@ -96,6 +96,30 @@ namespace Soot.Dotnet.TestConsole
                 AssemblyFileAbsolutePath =
                     "/Users/thomasschmeiduch/ma/assemblies/HtmlAgilityPack-PCL.dll",
                 TypeReflectionName = "FBAccount.TinkerAccount"
+            };
+            
+            CliByteArray protoParamArr = default;
+            protoParamArr.SetArray(protoParams.ToByteArray());
+            
+            var m = AssemblyProvider.GetAssemblyContent(protoParamArr);
+            
+            // deserialize test
+            var msg = new AssemblyAllTypes();
+            if (m.Length != 0)
+                msg.MergeFrom(m.GetArray());
+
+            int x = 0;
+        }
+        
+        static void TestTypeDefinition3()
+        {
+            AnalyzerParamsMsg protoParams = new AnalyzerParamsMsg
+            {
+                AnalyzerMethodCall = AnalyzerMethodCall.GetTypeDef,
+                DebugMode = true,
+                AssemblyFileAbsolutePath =
+                    "/Users/thomasschmeiduch/Documents/Git/UNI/soot-dotnet/src/Soot.Dotnet.TestSnippets/bin/Debug/netcoreapp3.1/Soot.Dotnet.TestSnippets.dll",
+                TypeReflectionName = "Soot.Dotnet.TestSnippets.Members.Native"
             };
             
             CliByteArray protoParamArr = default;
@@ -179,12 +203,10 @@ namespace Soot.Dotnet.TestConsole
                 DebugMode = true,
                 AssemblyFileAbsolutePath =
                     "/usr/local/share/dotnet/shared/Microsoft.NETCore.App/3.1.13/System.Private.CoreLib.dll",
-                TypeReflectionName = "System.Type",
-                MethodName = "GetType",
+                TypeReflectionName = "System.String",
+                MethodName = "Intern",
                 MethodParams = { 
-                    new SootTypeMsg { TypeName = "System.String", Kind = SootTypeMsg.Types.Kind.Ref}, 
-                    new SootTypeMsg{TypeName = "System.Boolean"},
-                    new SootTypeMsg{TypeName = "System.Boolean"}
+                    new SootTypeMsg { TypeName = "System.String", Kind = SootTypeMsg.Types.Kind.Ref}
                 }
             };
             HelperTestMethodBody(protoParams);
@@ -240,6 +262,27 @@ namespace Soot.Dotnet.TestConsole
                     new SootTypeMsg { TypeName = "boolean", Kind = SootTypeMsg.Types.Kind.Primitive }
                 }
                 //MethodParams = { }
+            };
+            HelperTestMethodBody(protoParams);
+        }
+        
+        static void TestGetMethodBody5()
+        {
+            var protoParams = new AnalyzerParamsMsg
+            {
+                AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
+                DebugMode = true,
+                AssemblyFileAbsolutePath =
+                    "/Users/thomasschmeiduch/Documents/Git/UNI/soot-dotnet/src/Soot.Dotnet.TestSnippets/bin/Debug/netcoreapp3.1/Soot.Dotnet.TestSnippets.dll",
+                TypeReflectionName = "Soot.Dotnet.TestSnippets.Members.Native",
+                MethodName = "MessageBox",
+                MethodParams = { 
+                    new SootTypeMsg { TypeName = "int", Kind = SootTypeMsg.Types.Kind.Primitive},
+                    new SootTypeMsg { TypeName = "System.String", Kind = SootTypeMsg.Types.Kind.Ref},
+                    new SootTypeMsg { TypeName = "System.String", Kind = SootTypeMsg.Types.Kind.Ref},
+                    new SootTypeMsg { TypeName = "int", Kind = SootTypeMsg.Types.Kind.Primitive}
+                }
+                // IntPtr hWnd, string lpText, string lpCaption, uint uType
             };
             HelperTestMethodBody(protoParams);
         }

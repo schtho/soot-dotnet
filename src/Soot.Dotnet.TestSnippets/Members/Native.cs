@@ -10,6 +10,8 @@ namespace Soot.Dotnet.TestSnippets.Members
         [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         private static extern int MessageBox(IntPtr hWnd, string lpText, string lpCaption, uint uType);
 
+        public extern int TestExtern();
+
         public static void DoSth()
         {
             // Invoke the function as a regular managed method.
