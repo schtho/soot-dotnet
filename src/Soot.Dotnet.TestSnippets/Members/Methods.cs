@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,6 +13,17 @@ namespace Soot.Dotnet.TestSnippets.Members
         {
             var lst = new List<int>{1,23,45432,432,123};
             var lst2 = lst.Select(x => x++);
+        }
+
+        // void Finalize() not possible!
+        public void finalize()
+        {
+            
+        }
+
+        ~Methods()
+        {
+            Console.WriteLine("Ciao");
         }
     }
 }
