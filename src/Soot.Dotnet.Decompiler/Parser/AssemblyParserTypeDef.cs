@@ -62,8 +62,10 @@ namespace Soot.Dotnet.Decompiler.Parser
                         continue;
                     aacMessage.ListOfTypes.Add(protoConverter.ToTypeDefinitionMessage(type, true));
                 }
-                
+                // TODO add support for multi assembly with .netmodule files, after editing ILSpy API
+
                 // add all referenced types
+                // TODO replace loop with sth like ICSharpCode.ILSpy.Metadata.TypeRefTableTreeNode or System.Reflection.Metadata.MetadataReader.GetTypeReference()
                 foreach (var module in decompiler.TypeSystem.ReferencedModules)
                 {
                     foreach (var typeDefinition in module.TypeDefinitions)
@@ -73,8 +75,6 @@ namespace Soot.Dotnet.Decompiler.Parser
                         aacMessage.AllReferencedModuleTypes.Add(DefinitionUtils.ConvertCilToJvmNaming(DefinitionUtils.GetTypeFullname(typeDefinition)));
                     }
                 }
-
-                // TODO multi assembly
 
                 var protoArray = aacMessage.ToByteArray();
                 returnValue.SetArray(protoArray);
