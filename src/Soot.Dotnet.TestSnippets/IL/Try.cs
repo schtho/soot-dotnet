@@ -5,6 +5,20 @@ namespace Soot.Dotnet.TestSnippets.IL
 {
     public class Try
     {
+        public void TryCatchEasy()
+        {
+            try
+            {
+                Console.WriteLine("Hello");
+                var x = 5;
+                var z = x + 10;
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+        }
+        
         public int TryCatch(int[] a, bool b, string c)
         {
             try

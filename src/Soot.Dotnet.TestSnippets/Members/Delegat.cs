@@ -2,10 +2,12 @@ using System;
 
 namespace Soot.Dotnet.TestSnippets.Members
 {
+    public delegate void MyDelegate(string s);
+    
     /// <summary>
     /// Produce IL Code with delegates
     /// </summary>
-    public class Delegat
+    public class MyDelegateInvoke
     {
         public static void DoSth()
         {
@@ -18,6 +20,4 @@ namespace Soot.Dotnet.TestSnippets.Members
             Console.WriteLine(s);
         }
     }
-
-    public delegate void MyDelegate(string s);
 }

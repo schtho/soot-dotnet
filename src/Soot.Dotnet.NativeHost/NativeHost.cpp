@@ -321,8 +321,11 @@ load_assembly_and_get_function_pointer_fn NativeHost::get_dotnet_load_assembly(c
 /*  // TODO change C++ stack from initialize_for_runtime_config to initialize_for_dotnet_command_line,
     //    to load "self-contained" managed DLL instead of "framework-dependent"
     //    this leads to portable mode of this native host, where we may not need to install dotnet on the target system
+    //    .NET Core 2 had TPA List in CoreCLR, but .NET 3 with additionalProbingPaths does not work
     // Currently not working
     // Example project: https://github.com/V3rzeT/EasyCrossH2/tree/master/Bridge
+    // Doc: https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md
+    // Some issues: https://github.com/dotnet/runtime/issues/35465 , https://github.com/dotnet/runtime/issues/35329
 
     // insert in bool NativeHost::load_hostfxr():
     run_app_fptr = (hostfxr_run_app_fn)get_export(lib, "hostfxr_run_app");

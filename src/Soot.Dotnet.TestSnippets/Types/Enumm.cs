@@ -10,7 +10,7 @@ namespace Soot.Dotnet.TestSnippets.Types
         public enum MyEnum
         {
             Dies,
-            Das,
+            Das = 1337,
             Ananas
         }
 

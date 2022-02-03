@@ -21,6 +21,12 @@ namespace Soot.Dotnet.TestSnippets.Members
             
         }
 
+        public unsafe void MyUnsafeMethod()
+        {
+            int i = 0;
+            int* p = &i;
+        }
+
         ~Methods()
         {
             Console.WriteLine("Ciao");

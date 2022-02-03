@@ -16,26 +16,34 @@ namespace Soot.Dotnet.TestConsole
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            TestGetAllTypes1();
             // TestProperty();
             // TestGetTypeDefinitions();
             // TestGetMethodBody();
             // TestTypeDefinition();
+            // TestGetMethodBody();
             // TestGetMethodBody2();
             
-            TestTypeDefinition3();
+            // TestTypeDefinition3();
             // TestGetMethodBody5();
-
+            // TestMultiAssembly();
+            
+            // TestGetMethodBody9();
+            TestGetMethodBody11();
+            // TestGetMethodBody8();
         }
 
-        
+        private const string PathTestSnippetDll = "/Users/thomasschmeiduch/Documents/Git/UNI/soot-dotnet/src/Soot.Dotnet.TestSnippets/bin/Debug/netcoreapp3.1/Soot.Dotnet.TestSnippets.dll";
+
+        private const string CoreLibPath = "/usr/local/share/dotnet/shared/Microsoft.NETCore.App/3.1.13/System.Private.CoreLib.dll";
+
         #region Get Types
 
         static void TestGetAllTypes1()
         {
             var decompilerParams = new AnalyzerParamsMsg
             {
-                AssemblyFileAbsolutePath =
-                    "/usr/local/share/dotnet/shared/Microsoft.NETCore.App/3.1.13/System.Private.CoreLib.dll",
+                AssemblyFileAbsolutePath = CoreLibPath,
                 AnalyzerMethodCall = AnalyzerMethodCall.GetAllTypes
             };
             var paramArr = new CliByteArray();
@@ -50,8 +58,7 @@ namespace Soot.Dotnet.TestConsole
         {
             var decompilerParams = new AnalyzerParamsMsg
             {
-                AssemblyFileAbsolutePath =
-                    "/usr/local/share/dotnet/shared/Microsoft.NETCore.App/3.1.13/System.Private.CoreLib.dll",
+                AssemblyFileAbsolutePath = CoreLibPath,
                 AnalyzerMethodCall = AnalyzerMethodCall.GetAllTypes
             };
             var paramArr = new CliByteArray();
@@ -69,8 +76,7 @@ namespace Soot.Dotnet.TestConsole
             {
                 AnalyzerMethodCall = AnalyzerMethodCall.GetTypeDef,
                 DebugMode = true,
-                AssemblyFileAbsolutePath =
-                    "/usr/local/share/dotnet/shared/Microsoft.NETCore.App/3.1.13/System.Private.CoreLib.dll",
+                AssemblyFileAbsolutePath = CoreLibPath,
                 TypeReflectionName = "System.Environment"
             };
             
@@ -117,9 +123,8 @@ namespace Soot.Dotnet.TestConsole
             {
                 AnalyzerMethodCall = AnalyzerMethodCall.GetTypeDef,
                 DebugMode = true,
-                AssemblyFileAbsolutePath =
-                    "/Users/thomasschmeiduch/Documents/Git/UNI/soot-dotnet/src/Soot.Dotnet.TestSnippets/bin/Debug/netcoreapp3.1/Soot.Dotnet.TestSnippets.dll",
-                TypeReflectionName = "Soot.Dotnet.TestSnippets.Members.Native"
+                AssemblyFileAbsolutePath = PathTestSnippetDll,
+                TypeReflectionName = "Soot.Dotnet.TestSnippets.Types.IEinInter"
             };
             
             CliByteArray protoParamArr = default;
@@ -133,6 +138,22 @@ namespace Soot.Dotnet.TestConsole
                 msg.MergeFrom(m.GetArray());
 
             int x = 0;
+        }
+        
+        static void TestMultiAssembly()
+        {
+            var decompilerParams = new AnalyzerParamsMsg
+            {
+                AssemblyFileAbsolutePath =
+                    "/Users/thomasschmeiduch/multi/myAssembly.exe",
+                AnalyzerMethodCall = AnalyzerMethodCall.GetAllTypes
+            };
+            var paramArr = new CliByteArray();
+            paramArr.SetArray(decompilerParams.ToByteArray());
+            var jo = AssemblyProvider.GetAllTypesMsg(paramArr);
+            
+            var a = new AssemblyAllTypes();
+            a.MergeFrom(jo.GetArray());
         }
 
         #endregion
@@ -169,6 +190,147 @@ namespace Soot.Dotnet.TestConsole
 
             int x = 0;
         }
+        static void TestGetMethodBody6()
+        {
+            var protoParams = new AnalyzerParamsMsg
+            {
+                AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
+                MethodName = "TryFilter",
+                AssemblyFileAbsolutePath = PathTestSnippetDll,
+                TypeReflectionName = "Soot.Dotnet.TestSnippets.IL.Try",
+                DebugMode = true
+            };
+            // protoParams.MethodParams.Add(new SootTypeMsg { Kind = SootTypeMsg.Types.Kind.Primitive, TypeName = "System.Int32"});
+            
+            CliByteArray protoParamArr = default;
+            protoParamArr.SetArray(protoParams.ToByteArray());
+            
+            var m = AssemblyProvider.GetAssemblyContent(protoParamArr);
+            // var m = AssemblyAnalyzer.GetMethodBody(s1, s2, s3);
+            var msg = new IlFunctionMsg();
+            if (m.Length != 0)
+                msg.MergeFrom(m.GetArray());
+
+            int x = 0;
+        }
+        
+        static void TestGetMethodBody9()
+        {
+            var protoParams = new AnalyzerParamsMsg
+            {
+                AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
+                MethodName = "Calc",
+                AssemblyFileAbsolutePath = PathTestSnippetDll,
+                TypeReflectionName = "Soot.Dotnet.TestSnippets.SubPart.SubClass+NestedClass",
+                DebugMode = true
+            };
+            // protoParams.MethodParams.Add(new SootTypeMsg { Kind = SootTypeMsg.Types.Kind.Primitive, TypeName = "System.Int32"});
+            
+            CliByteArray protoParamArr = default;
+            protoParamArr.SetArray(protoParams.ToByteArray());
+            
+            var m = AssemblyProvider.GetAssemblyContent(protoParamArr);
+            // var m = AssemblyAnalyzer.GetMethodBody(s1, s2, s3);
+            var msg = new IlFunctionMsg();
+            if (m.Length != 0)
+                msg.MergeFrom(m.GetArray());
+
+            int x = 0;
+        }
+        
+        static void TestGetMethodBody10()
+                {
+                    var protoParams = new AnalyzerParamsMsg
+                    {
+                        AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
+                        MethodName = "ParamRefAction",
+                        AssemblyFileAbsolutePath = "/Users/thomasschmeiduch/RiderProjects/HelloWorldConsole/HelloWorldConsole/bin/Debug/netcoreapp3.1/HelloWorldConsole.dll",
+                        TypeReflectionName = "HelloWorldConsole.Program",
+                        DebugMode = true
+                    };
+                    // protoParams.MethodParams.Add(new SootTypeMsg { Kind = SootTypeMsg.Types.Kind.Primitive, TypeName = "System.Int32"});
+                    
+                    CliByteArray protoParamArr = default;
+                    protoParamArr.SetArray(protoParams.ToByteArray());
+                    
+                    var m = AssemblyProvider.GetAssemblyContent(protoParamArr);
+                    // var m = AssemblyAnalyzer.GetMethodBody(s1, s2, s3);
+                    var msg = new IlFunctionMsg();
+                    if (m.Length != 0)
+                        msg.MergeFrom(m.GetArray());
+        
+                    int x = 0;
+                }
+        static void TestGetMethodBody11()
+        {
+            var protoParams = new AnalyzerParamsMsg
+            {
+                AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
+                MethodName = "Join",
+                AssemblyFileAbsolutePath = "/Users/thomasschmeiduch/netfw/v4.8/mscorlib.dll",
+                TypeReflectionName = "System.String",
+                DebugMode = true
+            };
+            protoParams.MethodParams.Add(new SootTypeMsg { Kind = SootTypeMsg.Types.Kind.Ref, TypeName = "System.String"});
+            protoParams.MethodParams.Add(new SootTypeMsg { Kind = SootTypeMsg.Types.Kind.ArrayRef, TypeName = "System.String", NumDimensions = 1});
+            
+            CliByteArray protoParamArr = default;
+            protoParamArr.SetArray(protoParams.ToByteArray());
+            
+            var m = AssemblyProvider.GetAssemblyContent(protoParamArr);
+            // var m = AssemblyAnalyzer.GetMethodBody(s1, s2, s3);
+            var msg = new IlFunctionMsg();
+            if (m.Length != 0)
+                msg.MergeFrom(m.GetArray());
+
+            int x = 0;
+        }
+        
+        static void TestGetMethodBody7()
+        {
+            var protoParams = new AnalyzerParamsMsg
+            {
+                AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
+                MethodName = "Overr",
+                AssemblyFileAbsolutePath = PathTestSnippetDll,
+                TypeReflectionName = "Soot.Dotnet.TestSnippets.Types.B",
+                DebugMode = true
+            };
+            // protoParams.MethodParams.Add(new SootTypeMsg { Kind = SootTypeMsg.Types.Kind.Primitive, TypeName = "System.Int32"});
+            
+            CliByteArray protoParamArr = default;
+            protoParamArr.SetArray(protoParams.ToByteArray());
+            
+            var m = AssemblyProvider.GetAssemblyContent(protoParamArr);
+            var msg = new IlFunctionMsg();
+            if (m.Length != 0)
+                msg.MergeFrom(m.GetArray());
+
+            int x = 0;
+        }
+
+        static void TestGetMethodBody8()
+        {
+            var protoParams = new AnalyzerParamsMsg
+            {
+                AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
+                MethodName = "DoAlloc",
+                AssemblyFileAbsolutePath = PathTestSnippetDll,
+                TypeReflectionName = "Soot.Dotnet.TestSnippets.IL.LocAlloc",
+                DebugMode = true
+            };
+            
+            CliByteArray protoParamArr = default;
+            protoParamArr.SetArray(protoParams.ToByteArray());
+            
+            var m = AssemblyProvider.GetAssemblyContent(protoParamArr);
+            var msg = new IlFunctionMsg();
+            if (m.Length != 0)
+                msg.MergeFrom(m.GetArray());
+
+            int x = 0;
+        }
+
         
         static void TestProperty()
         {
@@ -201,11 +363,11 @@ namespace Soot.Dotnet.TestConsole
             {
                 AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
                 DebugMode = true,
-                AssemblyFileAbsolutePath =
-                    "/usr/local/share/dotnet/shared/Microsoft.NETCore.App/3.1.13/System.Private.CoreLib.dll",
+                AssemblyFileAbsolutePath = CoreLibPath,
                 TypeReflectionName = "System.String",
-                MethodName = "Intern",
+                MethodName = "Replace",
                 MethodParams = { 
+                    new SootTypeMsg { TypeName = "System.String", Kind = SootTypeMsg.Types.Kind.Ref},
                     new SootTypeMsg { TypeName = "System.String", Kind = SootTypeMsg.Types.Kind.Ref}
                 }
             };
@@ -272,8 +434,7 @@ namespace Soot.Dotnet.TestConsole
             {
                 AnalyzerMethodCall = AnalyzerMethodCall.GetMethodBody,
                 DebugMode = true,
-                AssemblyFileAbsolutePath =
-                    "/Users/thomasschmeiduch/Documents/Git/UNI/soot-dotnet/src/Soot.Dotnet.TestSnippets/bin/Debug/netcoreapp3.1/Soot.Dotnet.TestSnippets.dll",
+                AssemblyFileAbsolutePath = PathTestSnippetDll,
                 TypeReflectionName = "Soot.Dotnet.TestSnippets.Members.Native",
                 MethodName = "MessageBox",
                 MethodParams = { 
