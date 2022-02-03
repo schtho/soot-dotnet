@@ -308,6 +308,12 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
                     protoMsg.OpCode = IlInstructionMsg.Types.IlOpCode.LdTypeToken;
                     protoMsg.ValueConstantString = i.Type.ReflectionName;
                     break;
+                case InvalidBranch i:
+                    protoMsg.OpCode = IlInstructionMsg.Types.IlOpCode.InvalidBranch;
+                    protoMsg.ValueConstantString = i.Message;
+                    break;
+                case CallIndirect i:
+                    // not implemented due to CLI/C++
                 default:
                     Logger.Warn("OpCode " + il.GetType() + " is not implemented!");
                     protoMsg.OpCode = IlInstructionMsg.Types.IlOpCode.NoneOp;

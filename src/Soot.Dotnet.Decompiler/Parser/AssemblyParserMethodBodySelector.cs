@@ -21,11 +21,7 @@ namespace Soot.Dotnet.Decompiler.Parser
         private static void ExpandSootMethodArgList(ref List<SootTypeMsg> mArgumentTypes, string methodArgSpecs)
         {
             if (string.IsNullOrWhiteSpace(methodArgSpecs)) return;
-            
-            // if (DebugMode)
-            //     Logger.Info("ExpandSootMethodArgList: " + mArgumentTypes.Count + 
-            //                 " Method Argument Types with the Method argument specs " + methodArgSpecs);
-            
+
             // Split ArgumentSpecs string into array
             var methodSpecsArray = methodArgSpecs.Split(",");
             for (var i = 0; i < mArgumentTypes.Count; i++)

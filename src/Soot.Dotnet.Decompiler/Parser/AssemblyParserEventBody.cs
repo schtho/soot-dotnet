@@ -37,7 +37,7 @@ namespace Soot.Dotnet.Decompiler.Parser
                 if (!(methodDefinition is {HasBody: true}))
                     throw new MethodBodyNotExistException(typeReflectionName, methodDefinition.Name + " (event)");
 
-                returnValue = ExtractMethodBody(methodDefinition);
+                returnValue = HelperExtractMethodBody(methodDefinition);
             }
             catch (MethodBodyNotExistException e)
             {

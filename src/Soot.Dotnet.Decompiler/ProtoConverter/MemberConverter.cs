@@ -54,7 +54,7 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
             // rewrite IsExtern Field, because is not present in ILSpy
             if (!method.IsAbstract && !method.HasBody) 
                 m.IsExtern = true;
-            
+
             foreach (var parameter in method.Parameters)
             {
                 var p = new ParameterDefinition

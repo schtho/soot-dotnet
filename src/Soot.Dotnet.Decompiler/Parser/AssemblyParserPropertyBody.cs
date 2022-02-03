@@ -23,7 +23,7 @@ namespace Soot.Dotnet.Decompiler.Parser
                 if (!(methodDefinition is {HasBody: true}))
                     throw new MethodBodyNotExistException(DefinitionUtils.ConvertJvmToCilNaming(typeReflectionName), methodDefinition.Name + " (property)");
 
-                returnValue = ExtractMethodBody(methodDefinition);
+                returnValue = HelperExtractMethodBody(methodDefinition);
             }
             catch (MethodBodyNotExistException e)
             {

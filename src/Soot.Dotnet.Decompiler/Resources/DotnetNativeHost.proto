@@ -13,6 +13,7 @@ message AnalyzerParamsMsg {
   string assembly_file_absolute_path = 2;
   string type_reflection_name = 3;
   string method_name = 4;
+  string method_name_suffix = 11;
   repeated SootTypeMsg method_params = 5;
   string property_name = 6;
   bool property_is_setter = 7;

@@ -102,6 +102,9 @@ message IlInstructionMsg {
     LD_MEMBER_TOKEN = 69;
     LD_TYPE_TOKEN = 70;
     
+    INVALID_BRANCH = 71;
+    CALL_INDIRECT = 72;
+    
   }
   IlOpCode op_code = 1;
 

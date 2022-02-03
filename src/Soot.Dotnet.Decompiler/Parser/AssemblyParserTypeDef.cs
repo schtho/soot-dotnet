@@ -27,7 +27,6 @@ namespace Soot.Dotnet.Decompiler.Parser
                         continue;
                     aacMessage.ListOfTypes.Add(protoConverter.ToTypeDefinitionMessage(type, true));
                     break;
-
                 }
                 var protoArray = aacMessage.ToByteArray();
                 returnValue.SetArray(protoArray);
@@ -66,7 +65,7 @@ namespace Soot.Dotnet.Decompiler.Parser
 
                 // add all referenced types
                 // TODO replace loop with sth like ICSharpCode.ILSpy.Metadata.TypeRefTableTreeNode or System.Reflection.Metadata.MetadataReader.GetTypeReference()
-                foreach (var module in decompiler.TypeSystem.ReferencedModules)
+                foreach (var module in decompiler.TypeSystem.Modules)
                 {
                     foreach (var typeDefinition in module.TypeDefinitions)
                     {

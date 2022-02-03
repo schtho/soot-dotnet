@@ -127,7 +127,7 @@ namespace Soot.Dotnet.Decompiler
                 return paramsMsg.AnalyzerMethodCall switch
                 {
                     AnalyzerMethodCall.GetMethodBody => assemblyParser.GetMethodBody(paramsMsg.TypeReflectionName,
-                        paramsMsg.MethodName, paramsMsg.MethodParams.ToList()),
+                        paramsMsg.MethodName, paramsMsg.MethodNameSuffix, paramsMsg.MethodParams.ToList()),
                     AnalyzerMethodCall.GetMethodBodyOfEvent => assemblyParser.GetMethodBodyOfEvent(
                         paramsMsg.TypeReflectionName, paramsMsg.EventName, paramsMsg.EventAccessorType),
                     AnalyzerMethodCall.GetMethodBodyOfProperty => assemblyParser.GetMethodBodyOfProperty(

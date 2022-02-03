@@ -24,32 +24,32 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
     static DotnetNativeHostReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZEb3RuZXROYXRpdmVIb3N0LnByb3RvIs8CChFBbmFseXplclBhcmFtc01z",
+            "ChZEb3RuZXROYXRpdmVIb3N0LnByb3RvIusCChFBbmFseXplclBhcmFtc01z",
             "ZxIxChRhbmFseXplcl9tZXRob2RfY2FsbBgBIAEoDjITLkFuYWx5emVyTWV0",
             "aG9kQ2FsbBIjChthc3NlbWJseV9maWxlX2Fic29sdXRlX3BhdGgYAiABKAkS",
             "HAoUdHlwZV9yZWZsZWN0aW9uX25hbWUYAyABKAkSEwoLbWV0aG9kX25hbWUY",
-            "BCABKAkSIwoNbWV0aG9kX3BhcmFtcxgFIAMoCzIMLlNvb3RUeXBlTXNnEhUK",
-            "DXByb3BlcnR5X25hbWUYBiABKAkSGgoScHJvcGVydHlfaXNfc2V0dGVyGAcg",
-            "ASgIEhIKCmV2ZW50X25hbWUYCCABKAkSLwoTZXZlbnRfYWNjZXNzb3JfdHlw",
-            "ZRgJIAEoDjISLkV2ZW50QWNjZXNzb3JUeXBlEhIKCmRlYnVnX21vZGUYCiAB",
-            "KAgi7QEKC1Nvb3RUeXBlTXNnEh8KBGtpbmQYASABKA4yES5Tb290VHlwZU1z",
-            "Zy5LaW5kEhEKCXR5cGVfbmFtZRgCIAEoCRIWCg5udW1fZGltZW5zaW9ucxgD",
-            "IAEoBRIWCg5pc19jYWxsX2J5X3JlZhgEIAEoCBISCgppc19nZW5lcmljGAUg",
-            "ASgIEhoKEmdlbmVyaWNfcGFyYW1ldGVycxgGIAMoCSJKCgRLaW5kEgsKB05P",
-            "X0tJTkQQABINCglQUklNSVRJVkUQARIHCgNSRUYQAhIOCgpBUlJBWV9QUklN",
-            "EAMSDQoJQVJSQVlfUkVGEAQqmgEKEkFuYWx5emVyTWV0aG9kQ2FsbBILCgdO",
-            "T19DQUxMEAASEQoNR0VUX0FMTF9UWVBFUxABEhMKD0dFVF9NRVRIT0RfQk9E",
-            "WRACEh8KG0dFVF9NRVRIT0RfQk9EWV9PRl9QUk9QRVJUWRADEhwKGEdFVF9N",
-            "RVRIT0RfQk9EWV9PRl9FVkVOVBAEEhAKDEdFVF9UWVBFX0RFRhAFKmQKEUV2",
-            "ZW50QWNjZXNzb3JUeXBlEhMKD05PX0VWRU5UX01FVEhPRBAAEhAKDEFERF9B",
-            "Q0NFU1NPUhABEhMKD0lOVk9LRV9BQ0NFU1NPUhACEhMKD1JFTU9WRV9BQ0NF",
-            "U1NPUhADQlMKEXNvb3QuZG90bmV0LnByb3RvQhVQcm90b0RvdG5ldE5hdGl2",
-            "ZUhvc3SqAiZTb290LkRvdG5ldC5EZWNvbXBpbGVyLk1vZGVscy5Qcm90b2J1",
-            "ZmIGcHJvdG8z"));
+            "BCABKAkSGgoSbWV0aG9kX25hbWVfc3VmZml4GAsgASgJEiMKDW1ldGhvZF9w",
+            "YXJhbXMYBSADKAsyDC5Tb290VHlwZU1zZxIVCg1wcm9wZXJ0eV9uYW1lGAYg",
+            "ASgJEhoKEnByb3BlcnR5X2lzX3NldHRlchgHIAEoCBISCgpldmVudF9uYW1l",
+            "GAggASgJEi8KE2V2ZW50X2FjY2Vzc29yX3R5cGUYCSABKA4yEi5FdmVudEFj",
+            "Y2Vzc29yVHlwZRISCgpkZWJ1Z19tb2RlGAogASgIIu0BCgtTb290VHlwZU1z",
+            "ZxIfCgRraW5kGAEgASgOMhEuU29vdFR5cGVNc2cuS2luZBIRCgl0eXBlX25h",
+            "bWUYAiABKAkSFgoObnVtX2RpbWVuc2lvbnMYAyABKAUSFgoOaXNfY2FsbF9i",
+            "eV9yZWYYBCABKAgSEgoKaXNfZ2VuZXJpYxgFIAEoCBIaChJnZW5lcmljX3Bh",
+            "cmFtZXRlcnMYBiADKAkiSgoES2luZBILCgdOT19LSU5EEAASDQoJUFJJTUlU",
+            "SVZFEAESBwoDUkVGEAISDgoKQVJSQVlfUFJJTRADEg0KCUFSUkFZX1JFRhAE",
+            "KpoBChJBbmFseXplck1ldGhvZENhbGwSCwoHTk9fQ0FMTBAAEhEKDUdFVF9B",
+            "TExfVFlQRVMQARITCg9HRVRfTUVUSE9EX0JPRFkQAhIfChtHRVRfTUVUSE9E",
+            "X0JPRFlfT0ZfUFJPUEVSVFkQAxIcChhHRVRfTUVUSE9EX0JPRFlfT0ZfRVZF",
+            "TlQQBBIQCgxHRVRfVFlQRV9ERUYQBSpkChFFdmVudEFjY2Vzc29yVHlwZRIT",
+            "Cg9OT19FVkVOVF9NRVRIT0QQABIQCgxBRERfQUNDRVNTT1IQARITCg9JTlZP",
+            "S0VfQUNDRVNTT1IQAhITCg9SRU1PVkVfQUNDRVNTT1IQA0JTChFzb290LmRv",
+            "dG5ldC5wcm90b0IVUHJvdG9Eb3RuZXROYXRpdmVIb3N0qgImU29vdC5Eb3Ru",
+            "ZXQuRGVjb21waWxlci5Nb2RlbHMuUHJvdG9idWZiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.AnalyzerMethodCall), typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.EventAccessorType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.AnalyzerParamsMsg), global::Soot.Dotnet.Decompiler.Models.Protobuf.AnalyzerParamsMsg.Parser, new[]{ "AnalyzerMethodCall", "AssemblyFileAbsolutePath", "TypeReflectionName", "MethodName", "MethodParams", "PropertyName", "PropertyIsSetter", "EventName", "EventAccessorType", "DebugMode" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.AnalyzerParamsMsg), global::Soot.Dotnet.Decompiler.Models.Protobuf.AnalyzerParamsMsg.Parser, new[]{ "AnalyzerMethodCall", "AssemblyFileAbsolutePath", "TypeReflectionName", "MethodName", "MethodNameSuffix", "MethodParams", "PropertyName", "PropertyIsSetter", "EventName", "EventAccessorType", "DebugMode" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.SootTypeMsg), global::Soot.Dotnet.Decompiler.Models.Protobuf.SootTypeMsg.Parser, new[]{ "Kind", "TypeName", "NumDimensions", "IsCallByRef", "IsGeneric", "GenericParameters" }, null, new[]{ typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.SootTypeMsg.Types.Kind) }, null, null)
           }));
     }
@@ -109,6 +109,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       assemblyFileAbsolutePath_ = other.assemblyFileAbsolutePath_;
       typeReflectionName_ = other.typeReflectionName_;
       methodName_ = other.methodName_;
+      methodNameSuffix_ = other.methodNameSuffix_;
       methodParams_ = other.methodParams_.Clone();
       propertyName_ = other.propertyName_;
       propertyIsSetter_ = other.propertyIsSetter_;
@@ -164,6 +165,17 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       get { return methodName_; }
       set {
         methodName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "method_name_suffix" field.</summary>
+    public const int MethodNameSuffixFieldNumber = 11;
+    private string methodNameSuffix_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string MethodNameSuffix {
+      get { return methodNameSuffix_; }
+      set {
+        methodNameSuffix_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -249,6 +261,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if (AssemblyFileAbsolutePath != other.AssemblyFileAbsolutePath) return false;
       if (TypeReflectionName != other.TypeReflectionName) return false;
       if (MethodName != other.MethodName) return false;
+      if (MethodNameSuffix != other.MethodNameSuffix) return false;
       if(!methodParams_.Equals(other.methodParams_)) return false;
       if (PropertyName != other.PropertyName) return false;
       if (PropertyIsSetter != other.PropertyIsSetter) return false;
@@ -265,6 +278,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if (AssemblyFileAbsolutePath.Length != 0) hash ^= AssemblyFileAbsolutePath.GetHashCode();
       if (TypeReflectionName.Length != 0) hash ^= TypeReflectionName.GetHashCode();
       if (MethodName.Length != 0) hash ^= MethodName.GetHashCode();
+      if (MethodNameSuffix.Length != 0) hash ^= MethodNameSuffix.GetHashCode();
       hash ^= methodParams_.GetHashCode();
       if (PropertyName.Length != 0) hash ^= PropertyName.GetHashCode();
       if (PropertyIsSetter != false) hash ^= PropertyIsSetter.GetHashCode();
@@ -324,6 +338,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteRawTag(80);
         output.WriteBool(DebugMode);
       }
+      if (MethodNameSuffix.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(MethodNameSuffix);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -370,6 +388,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteRawTag(80);
         output.WriteBool(DebugMode);
       }
+      if (MethodNameSuffix.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(MethodNameSuffix);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -390,6 +412,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       }
       if (MethodName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MethodName);
+      }
+      if (MethodNameSuffix.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MethodNameSuffix);
       }
       size += methodParams_.CalculateSize(_repeated_methodParams_codec);
       if (PropertyName.Length != 0) {
@@ -429,6 +454,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       }
       if (other.MethodName.Length != 0) {
         MethodName = other.MethodName;
+      }
+      if (other.MethodNameSuffix.Length != 0) {
+        MethodNameSuffix = other.MethodNameSuffix;
       }
       methodParams_.Add(other.methodParams_);
       if (other.PropertyName.Length != 0) {
@@ -500,6 +528,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
             DebugMode = input.ReadBool();
             break;
           }
+          case 90: {
+            MethodNameSuffix = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -552,6 +584,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           }
           case 80: {
             DebugMode = input.ReadBool();
+            break;
+          }
+          case 90: {
+            MethodNameSuffix = input.ReadString();
             break;
           }
         }
