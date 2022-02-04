@@ -14,7 +14,7 @@ message AnalyzerParamsMsg {
   string type_reflection_name = 3;
   string method_name = 4;
   string method_name_suffix = 11;
-  repeated SootTypeMsg method_params = 5;
+  int32 method_pe_token = 12;
   string property_name = 6;
   bool property_is_setter = 7;
   string event_name = 8;
@@ -36,20 +36,4 @@ enum EventAccessorType {
   ADD_ACCESSOR = 1;
   INVOKE_ACCESSOR = 2;
   REMOVE_ACCESSOR = 3;
-}
-
-message SootTypeMsg {
-  enum Kind {
-    NO_KIND = 0;
-    PRIMITIVE = 1;
-    REF = 2;
-    ARRAY_PRIM = 3;
-    ARRAY_REF = 4;
-  }
-  Kind kind = 1;
-  string type_name = 2;
-  int32 num_dimensions = 3;
-  bool is_call_by_ref = 4;
-  bool is_generic = 5;
-  repeated string generic_parameters = 6;
 }

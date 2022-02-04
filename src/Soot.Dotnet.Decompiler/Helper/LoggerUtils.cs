@@ -20,7 +20,7 @@ namespace Soot.Dotnet.Decompiler.Helper
                                            "${level:uppercase=true:padding=-5} ${logger} - " +
                                            "${message}${literal:text=\n:when='${exception}'!=''} " +
                                            "${exception:format=tostring} " +
-                                           "${literal:text=(at Method <:when='${event-properties:item=TypeName}'!=''}" 
+                                           "${literal:text=(Method <:when='${event-properties:item=TypeName}'!=''}" 
                                            + "${event-properties:item=TypeName}" 
                                            + "${literal:text=\\::when='${event-properties:item=Method}'!=''}" 
                                            + "${event-properties:item=Method}" +

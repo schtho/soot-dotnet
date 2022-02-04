@@ -1,4 +1,6 @@
+using Google.Protobuf;
 using ICSharpCode.Decompiler.IL;
+using Soot.Dotnet.Decompiler.Models.Cli;
 using Soot.Dotnet.Decompiler.Models.Protobuf;
 using Block = ICSharpCode.Decompiler.IL.Block;
 
@@ -19,6 +21,15 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
         private ProtoConverter(bool isTryFilter)
         {
             _isTryFilter = isTryFilter;
+        }
+        
+        public static CliByteArray ConvertMethodBody(ILFunction ilBody)
+        {
+            var returnValue = new CliByteArray();
+            var protoConverter = new ProtoConverter();
+            var protoBlockContainer = protoConverter.ToIlFunctionMessage(ilBody);
+            returnValue.SetArray(protoBlockContainer.ToByteArray());
+            return returnValue;
         }
         
         private IlBlock ToIlBlockMessage(Block block)

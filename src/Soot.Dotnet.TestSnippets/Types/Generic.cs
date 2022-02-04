@@ -21,12 +21,12 @@ namespace Soot.Dotnet.TestSnippets.Types
             list3.Add(new ExampleClass());
         }
 
-        public static void DoGen1(GenericList<int> genericList)
+        public static void DoGen(GenericList<int> genericList)
         {
             int x = 0;
         }
 
-        public static void DoGen2(GenericList<string> genericList)
+        public static void DoGen(GenericList<string> genericList)
         {
             int x = 1;
         }

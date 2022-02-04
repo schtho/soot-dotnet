@@ -1,3 +1,4 @@
+using System;
 using ICSharpCode.Decompiler.TypeSystem;
 
 namespace Soot.Dotnet.Decompiler.Helper
@@ -63,6 +64,30 @@ namespace Soot.Dotnet.Decompiler.Helper
                             "System.Object" : 
                             type.ReflectionName;
                 }
+            }
+        }
+        
+        /// <summary>
+        /// A Jimple Method can be: MyMethod[[0123456]]
+        /// The suffix is [[0123456]]. Parse this suffix to get the unique PE Token 0123456 of the given method
+        /// </summary>
+        /// <param name="methodSuffix"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public static int GetPeTokenOfMethodSuffix(string methodSuffix)
+        {
+            if (string.IsNullOrWhiteSpace(methodSuffix))
+                return 0;
+            if (!(methodSuffix.Contains("[[") && methodSuffix.Contains("]]")))
+                return 0;
+            var token = methodSuffix[2..^2];
+            try
+            {
+                return int.Parse(token);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Could not parse the PE token out of the method suffix!");
             }
         }
     }

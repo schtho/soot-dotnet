@@ -10,20 +10,29 @@ namespace Soot.Dotnet.Decompiler.Parser
     {
         public CliByteArray GetMethodBodyOfProperty(string typeReflectionName, string propertyName, bool isSetter)
         {
+            typeReflectionName = DefinitionUtils.ConvertJvmToCilNaming(typeReflectionName);
+            
             var returnValue = new CliByteArray();
             try
             {
-                var declaringType = GetType(DefinitionUtils.ConvertJvmToCilNaming(typeReflectionName));
+                var declaringType = GetType(typeReflectionName);
 
                 var propertyDefinition = declaringType.Properties.FirstOrDefault(x => x.Name.Equals(propertyName));
                 if (propertyDefinition == null)
                     throw new MemberNotExistException(MemberNotExistException.Member.Property, propertyName);
 
-                var methodDefinition = isSetter ? propertyDefinition.Setter : propertyDefinition.Getter;
-                if (!(methodDefinition is {HasBody: true}))
-                    throw new MethodBodyNotExistException(DefinitionUtils.ConvertJvmToCilNaming(typeReflectionName), methodDefinition.Name + " (property)");
+                var methodDefinition = isSetter switch
+                {
+                    true when propertyDefinition.CanSet => propertyDefinition.Setter,
+                    false when propertyDefinition.CanGet => propertyDefinition.Getter,
+                    _ => null
+                };
 
-                returnValue = HelperExtractMethodBody(methodDefinition);
+                if (!(methodDefinition is {HasBody: true}))
+                    throw new MethodBodyNotExistException(typeReflectionName, propertyDefinition.Name, isSetter);
+
+                var methodBody = ExtractMethodBody(methodDefinition);
+                returnValue = ProtoConverter.ProtoConverter.ConvertMethodBody(methodBody);
             }
             catch (MethodBodyNotExistException e)
             {

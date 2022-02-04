@@ -26,7 +26,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           string.Concat(
             "ChZBc3NlbWJseUFsbFR5cGVzLnByb3RvIl8KEEFzc2VtYmx5QWxsVHlwZXMS",
             "JgoNbGlzdF9vZl90eXBlcxgBIAMoCzIPLlR5cGVEZWZpbml0aW9uEiMKG2Fs",
-            "bF9yZWZlcmVuY2VkX21vZHVsZV90eXBlcxgCIAMoCSLGBAoOVHlwZURlZmlu",
+            "bF9yZWZlcmVuY2VkX21vZHVsZV90eXBlcxgCIAMoCSLYBAoOVHlwZURlZmlu",
             "aXRpb24SJQoNYWNjZXNzaWJpbGl0eRgBIAEoDjIOLkFjY2Vzc2liaWxpdHkS",
             "EAoIZnVsbG5hbWUYAiABKAkSEQoJbmFtZXNwYWNlGAMgASgJEhMKC2lzX2Fi",
             "c3RyYWN0GAQgASgIEhQKDGlzX3JlYWRfb25seRgFIAEoCBIRCglpc19zZWFs",
@@ -39,57 +39,59 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
             "LlR5cGVEZWZpbml0aW9uEigKCmF0dHJpYnV0ZXMYDyADKAsyFC5BdHRyaWJ1",
             "dGVEZWZpbml0aW9uEi8KFmdlbmVyaWNfdHlwZV9hcmd1bWVudHMYECADKAsy",
             "Dy5UeXBlRGVmaW5pdGlvbhIYChBhcnJheV9kaW1lbnNpb25zGBEgASgFEiAK",
-            "BmV2ZW50cxgSIAMoCzIQLkV2ZW50RGVmaW5pdGlvbiKKBAoQTWV0aG9kRGVm",
-            "aW5pdGlvbhIlCg1hY2Nlc3NpYmlsaXR5GAEgASgOMg4uQWNjZXNzaWJpbGl0",
-            "eRIMCgRuYW1lGAIgASgJEhAKCGhhc19ib2R5GAMgASgIEicKCXBhcmFtZXRl",
-            "chgEIAMoCzIULlBhcmFtZXRlckRlZmluaXRpb24SEwoLaXNfYWJzdHJhY3QY",
-            "BSABKAgSEwoLaXNfYWNjZXNzb3IYBiABKAgSFgoOaXNfY29uc3RydWN0b3IY",
-            "ByABKAgSFQoNaXNfZGVzdHJ1Y3RvchgIIAEoCBIsCiRpc19leHBsaWNpdF9p",
-            "bnRlcmZhY2VfaW1wbGVtZW50YXRpb24YCSABKAgSEQoJaXNfc3RhdGljGAog",
-            "ASgIEhIKCmlzX3ZpcnR1YWwYCyABKAgSEwoLaXNfb3BlcmF0b3IYECABKAgS",
-            "EQoJaXNfZXh0ZXJuGBEgASgIEhEKCWlzX3Vuc2FmZRgSIAEoCBIRCglpc19z",
-            "ZWFsZWQYEyABKAgSJAoLcmV0dXJuX3R5cGUYDCABKAsyDy5UeXBlRGVmaW5p",
-            "dGlvbhIoCgphdHRyaWJ1dGVzGA0gAygLMhQuQXR0cmlidXRlRGVmaW5pdGlv",
-            "bhIRCglmdWxsX25hbWUYDiABKAkSJwoOZGVjbGFyaW5nX3R5cGUYDyABKAsy",
-            "Dy5UeXBlRGVmaW5pdGlvbiKQAQoTUGFyYW1ldGVyRGVmaW5pdGlvbhIdCgR0",
-            "eXBlGAEgASgLMg8uVHlwZURlZmluaXRpb24SFgoOcGFyYW1ldGVyX25hbWUY",
-            "AiABKAkSDgoGaXNfcmVmGAMgASgIEg4KBmlzX291dBgEIAEoCBINCgVpc19p",
-            "bhgFIAEoCBITCgtpc19vcHRpb25hbBgGIAEoCCKmAwoPRmllbGREZWZpbml0",
-            "aW9uEiUKDWFjY2Vzc2liaWxpdHkYASABKA4yDi5BY2Nlc3NpYmlsaXR5EhMK",
-            "C2lzX2Fic3RyYWN0GAIgASgIEhEKCWlzX3NlYWxlZBgDIAEoCBIsCiRpc19l",
-            "eHBsaWNpdF9pbnRlcmZhY2VfaW1wbGVtZW50YXRpb24YBCABKAgSEwoLaXNf",
-            "b3ZlcnJpZGUYBSABKAgSEgoKaXNfdmlydHVhbBgGIAEoCBIQCghpc19jb25z",
-            "dBgHIAEoCBIUCgxpc19yZWFkX29ubHkYCCABKAgSEQoJaXNfc3RhdGljGAkg",
-            "ASgIEh0KBHR5cGUYCiABKAsyDy5UeXBlRGVmaW5pdGlvbhIfCgl0eXBlX2tp",
-            "bmQYDiABKA4yDC5UeXBlS2luZERlZhIMCgRuYW1lGAsgASgJEhEKCWZ1bGxf",
-            "bmFtZRgMIAEoCRInCg5kZWNsYXJpbmdfdHlwZRgNIAEoCzIPLlR5cGVEZWZp",
-            "bml0aW9uEigKCmF0dHJpYnV0ZXMYDyADKAsyFC5BdHRyaWJ1dGVEZWZpbml0",
-            "aW9uIsADChJQcm9wZXJ0eURlZmluaXRpb24SJQoNYWNjZXNzaWJpbGl0eRgB",
-            "IAEoDjIOLkFjY2Vzc2liaWxpdHkSDwoHY2FuX2dldBgCIAEoCBIPCgdjYW5f",
-            "c2V0GAMgASgIEhMKC2lzX2Fic3RyYWN0GAQgASgIEhEKCWlzX3NlYWxlZBgF",
-            "IAEoCBIsCiRpc19leHBsaWNpdF9pbnRlcmZhY2VfaW1wbGVtZW50YXRpb24Y",
-            "BiABKAgSEwoLaXNfb3ZlcnJpZGUYByABKAgSEgoKaXNfdmlydHVhbBgIIAEo",
-            "CBIRCglpc19zdGF0aWMYCSABKAgSEQoJaXNfZXh0ZXJuGA8gASgIEiEKBmdl",
-            "dHRlchgKIAEoCzIRLk1ldGhvZERlZmluaXRpb24SIQoGc2V0dGVyGAsgASgL",
-            "MhEuTWV0aG9kRGVmaW5pdGlvbhIdCgR0eXBlGAwgASgLMg8uVHlwZURlZmlu",
-            "aXRpb24SHwoJdHlwZV9raW5kGA4gASgOMgwuVHlwZUtpbmREZWYSDAoEbmFt",
-            "ZRgNIAEoCRIoCgphdHRyaWJ1dGVzGBAgAygLMhQuQXR0cmlidXRlRGVmaW5p",
-            "dGlvbiLBAQoTQXR0cmlidXRlRGVmaW5pdGlvbhInCg5hdHRyaWJ1dGVfdHlw",
-            "ZRgBIAEoCzIPLlR5cGVEZWZpbml0aW9uEhMKC2NvbnN0cnVjdG9yGAIgASgJ",
-            "EjUKD2ZpeGVkX2FyZ3VtZW50cxgDIAMoCzIcLkF0dHJpYnV0ZUFyZ3VtZW50",
-            "RGVmaW5pdGlvbhI1Cg9uYW1lZF9hcmd1bWVudHMYBCADKAsyHC5BdHRyaWJ1",
-            "dGVBcmd1bWVudERlZmluaXRpb24itQEKG0F0dHJpYnV0ZUFyZ3VtZW50RGVm",
-            "aW5pdGlvbhIdCgR0eXBlGAEgASgLMg8uVHlwZURlZmluaXRpb24SDAoEbmFt",
-            "ZRgCIAEoCRIUCgx2YWx1ZV9zdHJpbmcYAyADKAkSEwoLdmFsdWVfaW50MzIY",
-            "BCADKAUSEwoLdmFsdWVfaW50NjQYBSADKAMSFAoMdmFsdWVfZG91YmxlGAYg",
-            "AygBEhMKC3ZhbHVlX2Zsb2F0GAcgAygCIqgCCg9FdmVudERlZmluaXRpb24S",
-            "JQoNYWNjZXNzaWJpbGl0eRgBIAEoDjIOLkFjY2Vzc2liaWxpdHkSLgoTYWRk",
-            "X2FjY2Vzc29yX21ldGhvZBgCIAEoCzIRLk1ldGhvZERlZmluaXRpb24SDwoH",
-            "Y2FuX2FkZBgDIAEoCBISCgpjYW5faW52b2tlGAQgASgIEhIKCmNhbl9yZW1v",
-            "dmUYBSABKAgSEQoJZnVsbF9uYW1lGAYgASgJEjEKFmludm9rZV9hY2Nlc3Nv",
-            "cl9tZXRob2QYByABKAsyES5NZXRob2REZWZpbml0aW9uEgwKBG5hbWUYCCAB",
-            "KAkSMQoWcmVtb3ZlX2FjY2Vzc29yX21ldGhvZBgJIAEoCzIRLk1ldGhvZERl",
-            "ZmluaXRpb24qhgEKDUFjY2Vzc2liaWxpdHkSCAoETk9ORRAAEgsKB1BSSVZB",
+            "BmV2ZW50cxgSIAMoCzIQLkV2ZW50RGVmaW5pdGlvbhIQCghwZV90b2tlbhgT",
+            "IAEoBSKcBAoQTWV0aG9kRGVmaW5pdGlvbhIlCg1hY2Nlc3NpYmlsaXR5GAEg",
+            "ASgOMg4uQWNjZXNzaWJpbGl0eRIMCgRuYW1lGAIgASgJEhAKCGhhc19ib2R5",
+            "GAMgASgIEicKCXBhcmFtZXRlchgEIAMoCzIULlBhcmFtZXRlckRlZmluaXRp",
+            "b24SEwoLaXNfYWJzdHJhY3QYBSABKAgSEwoLaXNfYWNjZXNzb3IYBiABKAgS",
+            "FgoOaXNfY29uc3RydWN0b3IYByABKAgSFQoNaXNfZGVzdHJ1Y3RvchgIIAEo",
+            "CBIsCiRpc19leHBsaWNpdF9pbnRlcmZhY2VfaW1wbGVtZW50YXRpb24YCSAB",
+            "KAgSEQoJaXNfc3RhdGljGAogASgIEhIKCmlzX3ZpcnR1YWwYCyABKAgSEwoL",
+            "aXNfb3BlcmF0b3IYECABKAgSEQoJaXNfZXh0ZXJuGBEgASgIEhEKCWlzX3Vu",
+            "c2FmZRgSIAEoCBIRCglpc19zZWFsZWQYEyABKAgSJAoLcmV0dXJuX3R5cGUY",
+            "DCABKAsyDy5UeXBlRGVmaW5pdGlvbhIoCgphdHRyaWJ1dGVzGA0gAygLMhQu",
+            "QXR0cmlidXRlRGVmaW5pdGlvbhIRCglmdWxsX25hbWUYDiABKAkSJwoOZGVj",
+            "bGFyaW5nX3R5cGUYDyABKAsyDy5UeXBlRGVmaW5pdGlvbhIQCghwZV90b2tl",
+            "bhgUIAEoBSKQAQoTUGFyYW1ldGVyRGVmaW5pdGlvbhIdCgR0eXBlGAEgASgL",
+            "Mg8uVHlwZURlZmluaXRpb24SFgoOcGFyYW1ldGVyX25hbWUYAiABKAkSDgoG",
+            "aXNfcmVmGAMgASgIEg4KBmlzX291dBgEIAEoCBINCgVpc19pbhgFIAEoCBIT",
+            "Cgtpc19vcHRpb25hbBgGIAEoCCK4AwoPRmllbGREZWZpbml0aW9uEiUKDWFj",
+            "Y2Vzc2liaWxpdHkYASABKA4yDi5BY2Nlc3NpYmlsaXR5EhMKC2lzX2Fic3Ry",
+            "YWN0GAIgASgIEhEKCWlzX3NlYWxlZBgDIAEoCBIsCiRpc19leHBsaWNpdF9p",
+            "bnRlcmZhY2VfaW1wbGVtZW50YXRpb24YBCABKAgSEwoLaXNfb3ZlcnJpZGUY",
+            "BSABKAgSEgoKaXNfdmlydHVhbBgGIAEoCBIQCghpc19jb25zdBgHIAEoCBIU",
+            "Cgxpc19yZWFkX29ubHkYCCABKAgSEQoJaXNfc3RhdGljGAkgASgIEh0KBHR5",
+            "cGUYCiABKAsyDy5UeXBlRGVmaW5pdGlvbhIfCgl0eXBlX2tpbmQYDiABKA4y",
+            "DC5UeXBlS2luZERlZhIMCgRuYW1lGAsgASgJEhEKCWZ1bGxfbmFtZRgMIAEo",
+            "CRInCg5kZWNsYXJpbmdfdHlwZRgNIAEoCzIPLlR5cGVEZWZpbml0aW9uEigK",
+            "CmF0dHJpYnV0ZXMYDyADKAsyFC5BdHRyaWJ1dGVEZWZpbml0aW9uEhAKCHBl",
+            "X3Rva2VuGBAgASgFItIDChJQcm9wZXJ0eURlZmluaXRpb24SJQoNYWNjZXNz",
+            "aWJpbGl0eRgBIAEoDjIOLkFjY2Vzc2liaWxpdHkSDwoHY2FuX2dldBgCIAEo",
+            "CBIPCgdjYW5fc2V0GAMgASgIEhMKC2lzX2Fic3RyYWN0GAQgASgIEhEKCWlz",
+            "X3NlYWxlZBgFIAEoCBIsCiRpc19leHBsaWNpdF9pbnRlcmZhY2VfaW1wbGVt",
+            "ZW50YXRpb24YBiABKAgSEwoLaXNfb3ZlcnJpZGUYByABKAgSEgoKaXNfdmly",
+            "dHVhbBgIIAEoCBIRCglpc19zdGF0aWMYCSABKAgSEQoJaXNfZXh0ZXJuGA8g",
+            "ASgIEiEKBmdldHRlchgKIAEoCzIRLk1ldGhvZERlZmluaXRpb24SIQoGc2V0",
+            "dGVyGAsgASgLMhEuTWV0aG9kRGVmaW5pdGlvbhIdCgR0eXBlGAwgASgLMg8u",
+            "VHlwZURlZmluaXRpb24SHwoJdHlwZV9raW5kGA4gASgOMgwuVHlwZUtpbmRE",
+            "ZWYSDAoEbmFtZRgNIAEoCRIoCgphdHRyaWJ1dGVzGBAgAygLMhQuQXR0cmli",
+            "dXRlRGVmaW5pdGlvbhIQCghwZV90b2tlbhgRIAEoBSLBAQoTQXR0cmlidXRl",
+            "RGVmaW5pdGlvbhInCg5hdHRyaWJ1dGVfdHlwZRgBIAEoCzIPLlR5cGVEZWZp",
+            "bml0aW9uEhMKC2NvbnN0cnVjdG9yGAIgASgJEjUKD2ZpeGVkX2FyZ3VtZW50",
+            "cxgDIAMoCzIcLkF0dHJpYnV0ZUFyZ3VtZW50RGVmaW5pdGlvbhI1Cg9uYW1l",
+            "ZF9hcmd1bWVudHMYBCADKAsyHC5BdHRyaWJ1dGVBcmd1bWVudERlZmluaXRp",
+            "b24itQEKG0F0dHJpYnV0ZUFyZ3VtZW50RGVmaW5pdGlvbhIdCgR0eXBlGAEg",
+            "ASgLMg8uVHlwZURlZmluaXRpb24SDAoEbmFtZRgCIAEoCRIUCgx2YWx1ZV9z",
+            "dHJpbmcYAyADKAkSEwoLdmFsdWVfaW50MzIYBCADKAUSEwoLdmFsdWVfaW50",
+            "NjQYBSADKAMSFAoMdmFsdWVfZG91YmxlGAYgAygBEhMKC3ZhbHVlX2Zsb2F0",
+            "GAcgAygCIroCCg9FdmVudERlZmluaXRpb24SJQoNYWNjZXNzaWJpbGl0eRgB",
+            "IAEoDjIOLkFjY2Vzc2liaWxpdHkSLgoTYWRkX2FjY2Vzc29yX21ldGhvZBgC",
+            "IAEoCzIRLk1ldGhvZERlZmluaXRpb24SDwoHY2FuX2FkZBgDIAEoCBISCgpj",
+            "YW5faW52b2tlGAQgASgIEhIKCmNhbl9yZW1vdmUYBSABKAgSEQoJZnVsbF9u",
+            "YW1lGAYgASgJEjEKFmludm9rZV9hY2Nlc3Nvcl9tZXRob2QYByABKAsyES5N",
+            "ZXRob2REZWZpbml0aW9uEgwKBG5hbWUYCCABKAkSMQoWcmVtb3ZlX2FjY2Vz",
+            "c29yX21ldGhvZBgJIAEoCzIRLk1ldGhvZERlZmluaXRpb24SEAoIcGVfdG9r",
+            "ZW4YCiABKAUqhgEKDUFjY2Vzc2liaWxpdHkSCAoETk9ORRAAEgsKB1BSSVZB",
             "VEUQARIKCgZQVUJMSUMQAhIMCghJTlRFUk5BTBADEg0KCVBST1RFQ1RFRBAE",
             "EhoKFlBST1RFQ1RFRF9BTkRfSU5URVJOQUwQBRIZChVQUk9URUNURURfT1Jf",
             "SU5URVJOQUwQBir2AgoLVHlwZUtpbmREZWYSCwoHTk9fVFlQRRAAEgkKBU9U",
@@ -107,14 +109,14 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.Accessibility), typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.TypeKindDef), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.AssemblyAllTypes), global::Soot.Dotnet.Decompiler.Models.Protobuf.AssemblyAllTypes.Parser, new[]{ "ListOfTypes", "AllReferencedModuleTypes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.TypeDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.TypeDefinition.Parser, new[]{ "Accessibility", "Fullname", "Namespace", "IsAbstract", "IsReadOnly", "IsSealed", "IsStatic", "DeclaringOuterClass", "DirectBaseTypes", "TypeKind", "Methods", "Fields", "Properties", "NestedTypes", "Attributes", "GenericTypeArguments", "ArrayDimensions", "Events" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.MethodDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.MethodDefinition.Parser, new[]{ "Accessibility", "Name", "HasBody", "Parameter", "IsAbstract", "IsAccessor", "IsConstructor", "IsDestructor", "IsExplicitInterfaceImplementation", "IsStatic", "IsVirtual", "IsOperator", "IsExtern", "IsUnsafe", "IsSealed", "ReturnType", "Attributes", "FullName", "DeclaringType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.TypeDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.TypeDefinition.Parser, new[]{ "Accessibility", "Fullname", "Namespace", "IsAbstract", "IsReadOnly", "IsSealed", "IsStatic", "DeclaringOuterClass", "DirectBaseTypes", "TypeKind", "Methods", "Fields", "Properties", "NestedTypes", "Attributes", "GenericTypeArguments", "ArrayDimensions", "Events", "PeToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.MethodDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.MethodDefinition.Parser, new[]{ "Accessibility", "Name", "HasBody", "Parameter", "IsAbstract", "IsAccessor", "IsConstructor", "IsDestructor", "IsExplicitInterfaceImplementation", "IsStatic", "IsVirtual", "IsOperator", "IsExtern", "IsUnsafe", "IsSealed", "ReturnType", "Attributes", "FullName", "DeclaringType", "PeToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.ParameterDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.ParameterDefinition.Parser, new[]{ "Type", "ParameterName", "IsRef", "IsOut", "IsIn", "IsOptional" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.FieldDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.FieldDefinition.Parser, new[]{ "Accessibility", "IsAbstract", "IsSealed", "IsExplicitInterfaceImplementation", "IsOverride", "IsVirtual", "IsConst", "IsReadOnly", "IsStatic", "Type", "TypeKind", "Name", "FullName", "DeclaringType", "Attributes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.PropertyDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.PropertyDefinition.Parser, new[]{ "Accessibility", "CanGet", "CanSet", "IsAbstract", "IsSealed", "IsExplicitInterfaceImplementation", "IsOverride", "IsVirtual", "IsStatic", "IsExtern", "Getter", "Setter", "Type", "TypeKind", "Name", "Attributes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.FieldDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.FieldDefinition.Parser, new[]{ "Accessibility", "IsAbstract", "IsSealed", "IsExplicitInterfaceImplementation", "IsOverride", "IsVirtual", "IsConst", "IsReadOnly", "IsStatic", "Type", "TypeKind", "Name", "FullName", "DeclaringType", "Attributes", "PeToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.PropertyDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.PropertyDefinition.Parser, new[]{ "Accessibility", "CanGet", "CanSet", "IsAbstract", "IsSealed", "IsExplicitInterfaceImplementation", "IsOverride", "IsVirtual", "IsStatic", "IsExtern", "Getter", "Setter", "Type", "TypeKind", "Name", "Attributes", "PeToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.AttributeDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.AttributeDefinition.Parser, new[]{ "AttributeType", "Constructor", "FixedArguments", "NamedArguments" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.AttributeArgumentDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.AttributeArgumentDefinition.Parser, new[]{ "Type", "Name", "ValueString", "ValueInt32", "ValueInt64", "ValueDouble", "ValueFloat" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.EventDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.EventDefinition.Parser, new[]{ "Accessibility", "AddAccessorMethod", "CanAdd", "CanInvoke", "CanRemove", "FullName", "InvokeAccessorMethod", "Name", "RemoveAccessorMethod" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Soot.Dotnet.Decompiler.Models.Protobuf.EventDefinition), global::Soot.Dotnet.Decompiler.Models.Protobuf.EventDefinition.Parser, new[]{ "Accessibility", "AddAccessorMethod", "CanAdd", "CanInvoke", "CanRemove", "FullName", "InvokeAccessorMethod", "Name", "RemoveAccessorMethod", "PeToken" }, null, null, null, null)
           }));
     }
     #endregion
@@ -399,6 +401,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       genericTypeArguments_ = other.genericTypeArguments_.Clone();
       arrayDimensions_ = other.arrayDimensions_;
       events_ = other.events_.Clone();
+      peToken_ = other.peToken_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -597,6 +600,20 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       get { return events_; }
     }
 
+    /// <summary>Field number for the "pe_token" field.</summary>
+    public const int PeTokenFieldNumber = 19;
+    private int peToken_;
+    /// <summary>
+    ///hexadecimal x8 pe token
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PeToken {
+      get { return peToken_; }
+      set {
+        peToken_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as TypeDefinition);
@@ -628,6 +645,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if(!genericTypeArguments_.Equals(other.genericTypeArguments_)) return false;
       if (ArrayDimensions != other.ArrayDimensions) return false;
       if(!events_.Equals(other.events_)) return false;
+      if (PeToken != other.PeToken) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -652,6 +670,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       hash ^= genericTypeArguments_.GetHashCode();
       if (ArrayDimensions != 0) hash ^= ArrayDimensions.GetHashCode();
       hash ^= events_.GetHashCode();
+      if (PeToken != 0) hash ^= PeToken.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -716,6 +735,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteInt32(ArrayDimensions);
       }
       events_.WriteTo(output, _repeated_events_codec);
+      if (PeToken != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -773,6 +796,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteInt32(ArrayDimensions);
       }
       events_.WriteTo(ref output, _repeated_events_codec);
+      if (PeToken != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -820,6 +847,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(ArrayDimensions);
       }
       size += events_.CalculateSize(_repeated_events_codec);
+      if (PeToken != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PeToken);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -869,6 +899,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         ArrayDimensions = other.ArrayDimensions;
       }
       events_.Add(other.events_);
+      if (other.PeToken != 0) {
+        PeToken = other.PeToken;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -953,6 +986,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           }
           case 146: {
             events_.AddEntriesFrom(input, _repeated_events_codec);
+            break;
+          }
+          case 152: {
+            PeToken = input.ReadInt32();
             break;
           }
         }
@@ -1041,6 +1078,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
             events_.AddEntriesFrom(ref input, _repeated_events_codec);
             break;
           }
+          case 152: {
+            PeToken = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -1096,6 +1137,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       attributes_ = other.attributes_.Clone();
       fullName_ = other.fullName_;
       declaringType_ = other.declaringType_ != null ? other.declaringType_.Clone() : null;
+      peToken_ = other.peToken_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1311,6 +1353,20 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       }
     }
 
+    /// <summary>Field number for the "pe_token" field.</summary>
+    public const int PeTokenFieldNumber = 20;
+    private int peToken_;
+    /// <summary>
+    ///hexadecimal x8 pe token
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PeToken {
+      get { return peToken_; }
+      set {
+        peToken_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MethodDefinition);
@@ -1343,6 +1399,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if(!attributes_.Equals(other.attributes_)) return false;
       if (FullName != other.FullName) return false;
       if (!object.Equals(DeclaringType, other.DeclaringType)) return false;
+      if (PeToken != other.PeToken) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1368,6 +1425,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       hash ^= attributes_.GetHashCode();
       if (FullName.Length != 0) hash ^= FullName.GetHashCode();
       if (declaringType_ != null) hash ^= DeclaringType.GetHashCode();
+      if (PeToken != 0) hash ^= PeToken.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1454,6 +1512,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteRawTag(152, 1);
         output.WriteBool(IsSealed);
       }
+      if (PeToken != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1533,6 +1595,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteRawTag(152, 1);
         output.WriteBool(IsSealed);
       }
+      if (PeToken != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1594,6 +1660,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       }
       if (declaringType_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeclaringType);
+      }
+      if (PeToken != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PeToken);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1664,6 +1733,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           DeclaringType = new global::Soot.Dotnet.Decompiler.Models.Protobuf.TypeDefinition();
         }
         DeclaringType.MergeFrom(other.DeclaringType);
+      }
+      if (other.PeToken != 0) {
+        PeToken = other.PeToken;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1761,6 +1833,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
             IsSealed = input.ReadBool();
             break;
           }
+          case 160: {
+            PeToken = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -1855,6 +1931,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           }
           case 152: {
             IsSealed = input.ReadBool();
+            break;
+          }
+          case 160: {
+            PeToken = input.ReadInt32();
             break;
           }
         }
@@ -2273,6 +2353,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       fullName_ = other.fullName_;
       declaringType_ = other.declaringType_ != null ? other.declaringType_.Clone() : null;
       attributes_ = other.attributes_.Clone();
+      peToken_ = other.peToken_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2445,6 +2526,20 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       get { return attributes_; }
     }
 
+    /// <summary>Field number for the "pe_token" field.</summary>
+    public const int PeTokenFieldNumber = 16;
+    private int peToken_;
+    /// <summary>
+    ///hexadecimal x8 pe token
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PeToken {
+      get { return peToken_; }
+      set {
+        peToken_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FieldDefinition);
@@ -2473,6 +2568,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if (FullName != other.FullName) return false;
       if (!object.Equals(DeclaringType, other.DeclaringType)) return false;
       if(!attributes_.Equals(other.attributes_)) return false;
+      if (PeToken != other.PeToken) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2494,6 +2590,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if (FullName.Length != 0) hash ^= FullName.GetHashCode();
       if (declaringType_ != null) hash ^= DeclaringType.GetHashCode();
       hash ^= attributes_.GetHashCode();
+      if (PeToken != 0) hash ^= PeToken.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2567,6 +2664,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteEnum((int) TypeKind);
       }
       attributes_.WriteTo(output, _repeated_attributes_codec);
+      if (PeToken != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2633,6 +2734,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteEnum((int) TypeKind);
       }
       attributes_.WriteTo(ref output, _repeated_attributes_codec);
+      if (PeToken != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2685,6 +2790,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeclaringType);
       }
       size += attributes_.CalculateSize(_repeated_attributes_codec);
+      if (PeToken != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PeToken);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2745,6 +2853,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         DeclaringType.MergeFrom(other.DeclaringType);
       }
       attributes_.Add(other.attributes_);
+      if (other.PeToken != 0) {
+        PeToken = other.PeToken;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2823,6 +2934,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           }
           case 122: {
             attributes_.AddEntriesFrom(input, _repeated_attributes_codec);
+            break;
+          }
+          case 128: {
+            PeToken = input.ReadInt32();
             break;
           }
         }
@@ -2905,6 +3020,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
             attributes_.AddEntriesFrom(ref input, _repeated_attributes_codec);
             break;
           }
+          case 128: {
+            PeToken = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -2957,6 +3076,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       typeKind_ = other.typeKind_;
       name_ = other.name_;
       attributes_ = other.attributes_.Clone();
+      peToken_ = other.peToken_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3140,6 +3260,20 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       get { return attributes_; }
     }
 
+    /// <summary>Field number for the "pe_token" field.</summary>
+    public const int PeTokenFieldNumber = 17;
+    private int peToken_;
+    /// <summary>
+    ///hexadecimal x8 pe token
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PeToken {
+      get { return peToken_; }
+      set {
+        peToken_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PropertyDefinition);
@@ -3169,6 +3303,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if (TypeKind != other.TypeKind) return false;
       if (Name != other.Name) return false;
       if(!attributes_.Equals(other.attributes_)) return false;
+      if (PeToken != other.PeToken) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3191,6 +3326,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if (TypeKind != global::Soot.Dotnet.Decompiler.Models.Protobuf.TypeKindDef.NoType) hash ^= TypeKind.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       hash ^= attributes_.GetHashCode();
+      if (PeToken != 0) hash ^= PeToken.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3268,6 +3404,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteBool(IsExtern);
       }
       attributes_.WriteTo(output, _repeated_attributes_codec);
+      if (PeToken != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3338,6 +3478,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteBool(IsExtern);
       }
       attributes_.WriteTo(ref output, _repeated_attributes_codec);
+      if (PeToken != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3393,6 +3537,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
       size += attributes_.CalculateSize(_repeated_attributes_codec);
+      if (PeToken != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PeToken);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3459,6 +3606,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         Name = other.Name;
       }
       attributes_.Add(other.attributes_);
+      if (other.PeToken != 0) {
+        PeToken = other.PeToken;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3546,6 +3696,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
             attributes_.AddEntriesFrom(input, _repeated_attributes_codec);
             break;
           }
+          case 136: {
+            PeToken = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -3631,6 +3785,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           }
           case 130: {
             attributes_.AddEntriesFrom(ref input, _repeated_attributes_codec);
+            break;
+          }
+          case 136: {
+            PeToken = input.ReadInt32();
             break;
           }
         }
@@ -4302,6 +4460,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       invokeAccessorMethod_ = other.invokeAccessorMethod_ != null ? other.invokeAccessorMethod_.Clone() : null;
       name_ = other.name_;
       removeAccessorMethod_ = other.removeAccessorMethod_ != null ? other.removeAccessorMethod_.Clone() : null;
+      peToken_ = other.peToken_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4409,6 +4568,20 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       }
     }
 
+    /// <summary>Field number for the "pe_token" field.</summary>
+    public const int PeTokenFieldNumber = 10;
+    private int peToken_;
+    /// <summary>
+    ///hexadecimal x8 pe token
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PeToken {
+      get { return peToken_; }
+      set {
+        peToken_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EventDefinition);
@@ -4431,6 +4604,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if (!object.Equals(InvokeAccessorMethod, other.InvokeAccessorMethod)) return false;
       if (Name != other.Name) return false;
       if (!object.Equals(RemoveAccessorMethod, other.RemoveAccessorMethod)) return false;
+      if (PeToken != other.PeToken) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4446,6 +4620,7 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       if (invokeAccessorMethod_ != null) hash ^= InvokeAccessorMethod.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (removeAccessorMethod_ != null) hash ^= RemoveAccessorMethod.GetHashCode();
+      if (PeToken != 0) hash ^= PeToken.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4498,6 +4673,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteRawTag(74);
         output.WriteMessage(RemoveAccessorMethod);
       }
+      if (PeToken != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4543,6 +4722,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
         output.WriteRawTag(74);
         output.WriteMessage(RemoveAccessorMethod);
       }
+      if (PeToken != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(PeToken);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4578,6 +4761,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
       }
       if (removeAccessorMethod_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RemoveAccessorMethod);
+      }
+      if (PeToken != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PeToken);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4625,6 +4811,9 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
           RemoveAccessorMethod = new global::Soot.Dotnet.Decompiler.Models.Protobuf.MethodDefinition();
         }
         RemoveAccessorMethod.MergeFrom(other.RemoveAccessorMethod);
+      }
+      if (other.PeToken != 0) {
+        PeToken = other.PeToken;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4685,6 +4874,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
             input.ReadMessage(RemoveAccessorMethod);
             break;
           }
+          case 80: {
+            PeToken = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -4742,6 +4935,10 @@ namespace Soot.Dotnet.Decompiler.Models.Protobuf {
               RemoveAccessorMethod = new global::Soot.Dotnet.Decompiler.Models.Protobuf.MethodDefinition();
             }
             input.ReadMessage(RemoveAccessorMethod);
+            break;
+          }
+          case 80: {
+            PeToken = input.ReadInt32();
             break;
           }
         }

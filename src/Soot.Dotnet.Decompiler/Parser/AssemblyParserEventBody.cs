@@ -1,9 +1,6 @@
 using System;
 using System.Linq;
-using ICSharpCode.Decompiler.TypeSystem;
 using Soot.Dotnet.Decompiler.Exceptions;
-using Soot.Dotnet.Decompiler.Helper;
-using Soot.Dotnet.Decompiler.Models;
 using Soot.Dotnet.Decompiler.Models.Cli;
 using Soot.Dotnet.Decompiler.Models.Protobuf;
 
@@ -22,22 +19,19 @@ namespace Soot.Dotnet.Decompiler.Parser
                 if (eventDefinition == null)
                     throw new MemberNotExistException(MemberNotExistException.Member.Event, eventName);
 
-                IMethod methodDefinition;
-                switch (accessorType)
+                var methodDefinition = accessorType switch
                 {
-                    case EventAccessorType.AddAccessor: methodDefinition = eventDefinition.AddAccessor;
-                        break;
-                    case EventAccessorType.InvokeAccessor: methodDefinition = eventDefinition.InvokeAccessor;
-                        break;
-                    case EventAccessorType.RemoveAccessor: methodDefinition = eventDefinition.RemoveAccessor;
-                        break;
-                    default:
-                        throw new SystemException("Event accessor request is invalid!");
-                }
+                    EventAccessorType.AddAccessor when eventDefinition.CanAdd => eventDefinition.AddAccessor,
+                    EventAccessorType.InvokeAccessor when eventDefinition.CanInvoke => eventDefinition.InvokeAccessor,
+                    EventAccessorType.RemoveAccessor when eventDefinition.CanRemove => eventDefinition.RemoveAccessor,
+                    _ => null
+                };
+                
                 if (!(methodDefinition is {HasBody: true}))
-                    throw new MethodBodyNotExistException(typeReflectionName, methodDefinition.Name + " (event)");
-
-                returnValue = HelperExtractMethodBody(methodDefinition);
+                    throw new MethodBodyNotExistException(typeReflectionName, eventDefinition.Name, accessorType);
+                
+                var methodBody = ExtractMethodBody(methodDefinition);
+                returnValue = ProtoConverter.ProtoConverter.ConvertMethodBody(methodBody);
             }
             catch (MethodBodyNotExistException e)
             {

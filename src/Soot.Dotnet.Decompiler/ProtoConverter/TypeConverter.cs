@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 using ICSharpCode.Decompiler.TypeSystem;
 using Soot.Dotnet.Decompiler.Helper;
 using Soot.Dotnet.Decompiler.Models.Protobuf;
@@ -58,6 +59,7 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
                     tdMsg.IsStatic = definition.IsStatic;
                     tdMsg.IsSealed = definition.IsSealed;
                     tdMsg.IsReadOnly = definition.IsReadOnly;
+                    tdMsg.PeToken = MetadataTokens.GetToken(definition.MetadataToken);
 
                     tdMsg.DeclaringOuterClass = definition.DeclaringTypeDefinition == null
                         ? ""

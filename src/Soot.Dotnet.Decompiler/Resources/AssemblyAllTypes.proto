@@ -73,6 +73,7 @@ message TypeDefinition {
   repeated TypeDefinition generic_type_arguments = 16;
   int32 array_dimensions = 17;
   repeated EventDefinition events = 18;
+  int32 pe_token = 19; //hexadecimal x8 pe token
 }
 
 message MethodDefinition {
@@ -95,6 +96,7 @@ message MethodDefinition {
   repeated AttributeDefinition attributes = 13;
   string full_name = 14;
   TypeDefinition declaring_type = 15;
+  int32 pe_token = 20; //hexadecimal x8 pe token
 }
 
 /**
@@ -125,6 +127,7 @@ message FieldDefinition {
   string full_name = 12;
   TypeDefinition declaring_type = 13;
   repeated AttributeDefinition attributes = 15;
+  int32 pe_token = 16; //hexadecimal x8 pe token
 }
 
 message PropertyDefinition {
@@ -144,6 +147,7 @@ message PropertyDefinition {
   TypeKindDef type_kind = 14;
   string name = 13;
   repeated AttributeDefinition attributes = 16;
+  int32 pe_token = 17; //hexadecimal x8 pe token
 }
 
 /*
@@ -177,4 +181,5 @@ message EventDefinition {
   MethodDefinition invoke_accessor_method = 7;
   string name = 8;
   MethodDefinition remove_accessor_method = 9;
+  int32 pe_token = 10; //hexadecimal x8 pe token
 }

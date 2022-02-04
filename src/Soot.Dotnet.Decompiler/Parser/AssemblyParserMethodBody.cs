@@ -1,47 +1,42 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Google.Protobuf;
+using System.Reflection.Metadata.Ecma335;
+using ICSharpCode.Decompiler.IL;
 using ICSharpCode.Decompiler.TypeSystem;
 using Soot.Dotnet.Decompiler.Exceptions;
 using Soot.Dotnet.Decompiler.Helper;
 using Soot.Dotnet.Decompiler.Models.Cli;
-using Soot.Dotnet.Decompiler.Models.Protobuf;
 
 namespace Soot.Dotnet.Decompiler.Parser
 {
     public partial class AssemblyParser
     {
-        public CliByteArray GetMethodBody(string typeReflectionName, 
-            string methodName, List<SootTypeMsg> mArgumentTypes)
+        public CliByteArray GetMethodBody(string typeReflectionName,
+            string methodName, string methodNameSuffix, int peToken)
         {
+            methodName = DefinitionUtils.ConvertConstructorMethodName(methodName);
             Logger.SetProperty("TypeName", typeReflectionName);
-            Logger.SetProperty("Method", methodName);
+            Logger.SetProperty("Method", methodName + methodNameSuffix);
 
             var returnValue = new CliByteArray();
             try
             {
-                // Split Soot method name (e.g. MyMethod[[&_]]
-                var (method, methodArgSpecs) = MethodNamePair(DefinitionUtils.ConvertConstructorMethodName(methodName));
-
-                var declaringType = GetType(DefinitionUtils.ConvertJvmToCilNaming(typeReflectionName));
-
-                // Prepare Method Arg Type List and fill additional details
-                ExpandSootMethodArgList(ref mArgumentTypes, methodArgSpecs);
-
-                // Get right method definition
-                var methodDefinitions = declaringType.Methods.Where(x => x.Name.Equals(method)).ToList();
-                if (DebugMode)
-                    Logger.Info("Found " + methodDefinitions.Count +
-                                " Definitions for given method name (without checking params)");
-                if (methodDefinitions.Count == 0)
-                    throw new MemberNotExistException(MemberNotExistException.Member.Method, method, DefinitionUtils.ConvertJvmToCilNaming(typeReflectionName));
+                var declaringType = GetType(typeReflectionName);
                 
-                var methodDefinition = SelectMethod(methodDefinitions, mArgumentTypes);
+                // Get method definition by PE Token
+                IMethod methodDefinition;
+                if (peToken != 0)
+                    methodDefinition = GetMethodDefinition(declaringType, peToken, methodName);
+                else if (DefinitionUtils.GetPeTokenOfMethodSuffix(methodNameSuffix) != 0)
+                    methodDefinition = GetMethodDefinition(declaringType, DefinitionUtils.GetPeTokenOfMethodSuffix(methodNameSuffix), methodName);
+                else
+                    throw new MemberNotExistException(MemberNotExistException.Member.Method, methodName, peToken, declaringType.ReflectionName);
+                
                 if (!(methodDefinition is {HasBody: true}))
-                    throw new MethodBodyNotExistException(DefinitionUtils.ConvertJvmToCilNaming(typeReflectionName), method);
+                    throw new MethodBodyNotExistException(typeReflectionName, methodName, peToken);
 
-                returnValue = ExtractMethodBody(methodDefinition);
+                var methodBody = ExtractMethodBody(methodDefinition);
+                returnValue = ProtoConverter.ProtoConverter.ConvertMethodBody(methodBody);
             }
             catch (MethodBodyNotExistException e)
             {
@@ -59,28 +54,26 @@ namespace Soot.Dotnet.Decompiler.Parser
             Logger.SetProperty("Method", "");
             return returnValue;
         }
-        
+
+        private static IMethod GetMethodDefinition(ITypeDefinition declaringType, int peToken, string methodName)
+        {
+            var methodDefinitions = declaringType.Methods.Where(x => MetadataTokens.GetToken(x.MetadataToken) == peToken).ToList();
+            if (methodDefinitions.Count == 0)
+                throw new MemberNotExistException(MemberNotExistException.Member.Method, methodName, peToken, declaringType.ReflectionName);
+            return methodDefinitions.First();
+        }
+
         /// <summary>
         /// Extract Method Body of given Method Definition
         /// </summary>
         /// <param name="methodDefinition"></param>
         /// <returns></returns>
-        private CliByteArray ExtractMethodBody(IMethod methodDefinition)
+        private ILFunction ExtractMethodBody(IMethod methodDefinition)
         {
             if (DebugMode)
-                Logger.Info("Extracting method body of " + methodDefinition.ReflectionName);
+                Logger.WithProperty("Method", methodDefinition.ReflectionName).Info("Extracting method body");
 
-            var returnValue = new CliByteArray();
-            var ilMethodBlock = Disassembler.DecompileBody(methodDefinition);
-
-            // if (DebugMode)
-            //     Logger.Info("Got IL method with " + ((BlockContainer) ilMethodBlock.Body).Blocks.Count +
-            //                 " blocks in BlockContainer.");
-
-            var protoConverter = new ProtoConverter.ProtoConverter();
-            var protoBlockContainer = protoConverter.ToIlFunctionMessage(ilMethodBlock);
-            returnValue.SetArray(protoBlockContainer.ToByteArray());
-            return returnValue;
+            return Disassembler.DecompileBody(methodDefinition);
         }
     }
 }

@@ -7,17 +7,22 @@ namespace Soot.Dotnet.Decompiler.Exceptions
         public MemberNotExistException() : base("Member does not exist!") { }
         
         public MemberNotExistException(Member memberType, string memberName) 
-            : base("Member (" + memberType + ") " + memberName + " does not exist!")
+            : base(memberType + " " + memberName + " does not exist!")
         {
         }
         
         public MemberNotExistException(Member memberType, string memberName, string declaringType) 
-            : base("Member (" + memberType + ") " + memberName + " at Type " + declaringType + " does not exist!")
+            : base(memberType + " " + memberName + " at Type " + declaringType + " does not exist!")
+        {
+        }
+        
+        public MemberNotExistException(Member memberType, string memberName, int peToken, string declaringType) 
+            : base(memberType + " " + memberName + " (PE Token: 0x" + peToken.ToString("x8") + ") at Type " + declaringType + " does not exist!")
         {
         }
         
         public MemberNotExistException(Member memberType) 
-            : base("Member (" + memberType + ") does not exist!")
+            : base(memberType + " does not exist!")
         {
         }
         

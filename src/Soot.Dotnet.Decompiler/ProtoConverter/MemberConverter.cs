@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using ICSharpCode.Decompiler.TypeSystem;
 using Soot.Dotnet.Decompiler.Models.Protobuf;
 
@@ -25,7 +26,8 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
                 TypeKind = EnumConverter.ToTypeKindEnum(field.Type.Kind),
                 Name = field.Name,
                 FullName =  field.FullName,
-                DeclaringType = ToTypeDefinitionMessage(field.DeclaringType)
+                DeclaringType = ToTypeDefinitionMessage(field.DeclaringType),
+                PeToken = MetadataTokens.GetToken(field.MetadataToken)
             };
             return f;
         }
@@ -48,7 +50,8 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
                 IsExplicitInterfaceImplementation = method.IsExplicitInterfaceImplementation,
                 Accessibility = EnumConverter.ToAccessibilityEnum(method.Accessibility),
                 FullName = method.FullName,
-                DeclaringType = ToTypeDefinitionMessage(method.DeclaringType)
+                DeclaringType = ToTypeDefinitionMessage(method.DeclaringType),
+                PeToken = MetadataTokens.GetToken(method.MetadataToken)
             };
             
             // rewrite IsExtern Field, because is not present in ILSpy
@@ -97,7 +100,8 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
                 IsExplicitInterfaceImplementation = property.IsExplicitInterfaceImplementation,
                 Type = ToTypeDefinitionMessage(property.ReturnType),
                 TypeKind = EnumConverter.ToTypeKindEnum(property.ReturnType.Kind),
-                Name = property.Name
+                Name = property.Name,
+                PeToken = MetadataTokens.GetToken(property.MetadataToken)
             };
 
             var attributes = property.GetAttributes();
@@ -124,7 +128,8 @@ namespace Soot.Dotnet.Decompiler.ProtoConverter
             {
                 Accessibility = EnumConverter.ToAccessibilityEnum(@event.Accessibility),
                 Name = @event.Name,
-                FullName = @event.FullName
+                FullName = @event.FullName,
+                PeToken = MetadataTokens.GetToken(@event.MetadataToken)
             };
             if (@event.CanAdd)
             {
